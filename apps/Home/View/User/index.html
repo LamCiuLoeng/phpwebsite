@@ -4,5 +4,13 @@
 <block name="content">
 	<div class="container">
 		<h1>Hello,User Controller</h1>
+		<ul>
+		    <foreach name="users" item="user">
+                <li>{$user.id}|{$user.name}|{$user.password}</li>
+            </foreach>
+		</ul>
+		
+		
+		{:W('Category/Hmenu')} 
 	</div>
 </block>

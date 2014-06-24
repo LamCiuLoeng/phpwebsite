@@ -4,7 +4,7 @@ use Think\Model;
 /**
  * 
  */
-class UserModel extends Model {
-	protected $fields = array('id', 'name', 'password');
+class CategoryModel extends Model {
+	protected $fields = array('id', 'name', 'desc');
     protected $pk     = 'id';
 }

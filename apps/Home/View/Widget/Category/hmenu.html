@@ -1,5 +1,5 @@
 <ul class="dropdown-menu">
     <foreach name="cs" item="c">
-    <li><a href="#">{$c.name}</a></li>
+    <li><a href='{:U("Category/Index?id=$c[id]")}'>{$c.name}</a></li>
     </foreach>
 </ul>

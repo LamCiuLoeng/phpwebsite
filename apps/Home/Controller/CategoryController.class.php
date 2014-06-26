@@ -5,11 +5,11 @@ class CategoryController extends Controller {
     public function index($id){
         $Category = M('Category');
         
-        $condition['id'] = $id;
+        $condition['category_id'] = $id;
         
         
         $Product = M('Product');
-        $this->ps = $Product->select();
+        $this->ps = $Product->where($condition)->select();
   
     	$this->display();
 	}

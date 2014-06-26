@@ -5,6 +5,7 @@ use Think\Model;
  * 
  */
 class UserModel extends Model {
-	protected $fields = array('id', 'name', 'password');
+    protected $tablePrefix = 'thinkphp_'; 
+	protected $fields = array('id', 'name', 'password','email');
     protected $pk     = 'id';
 }

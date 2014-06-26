@@ -38,26 +38,13 @@
 	            <li><a href="#about">公司风采</a></li>
 	            <li class="dropdown">
 	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">产品展示 <b class="caret"></b></a>
-	              <ul class="dropdown-menu">
-	                <li><a href="#">地弹簧</a></li>
-	                <li><a href="#">闭门器</a></li>
-	                <li><a href="#">门夹</a></li>
-	                <li><a href="#">配件</a></li>
-	                <li><a href="#">门锁</a></li>
-	                <li><a href="#">浴室夹</a></li>
-	                <li><a href="#">玻璃门拉手</a></li>
-	                <li><a href="#">门执手</a></li>
-	                <li><a href="#">玻璃连接件</a></li>
-	                <li><a href="#">浴室固定件</a></li>
-	              </ul>
+	                {:W('Category/Hmenu')}
 	            </li>
 	            <li><a href="#contact">联系我们</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
 	    </div>
-		
-		{:W('Cate/Menu')}
 		
 		<block name="content">
 		</block>

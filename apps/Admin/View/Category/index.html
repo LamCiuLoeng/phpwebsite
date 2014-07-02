@@ -1,0 +1,44 @@
+<extend name="Public:base" />
+
+<block name="extJS">
+    <script type="text/javascript">
+    $(document).ready(function(){
+        
+    });
+    
+    function toDel(id){
+        
+    }
+    </script>
+</block>
+
+
+<block name="content">
+<h1 class="page-header">{:L('CATEGORYST')}</h1><a href={:U("Category/Add")} class="btn btn-lg btn-primary active" role="button">{:L('ACTIONADD')}</a>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+              <th>#</th>
+              <th>{:L('CATEGORYNAME')}</th>
+              <th>{:L('ACTION')}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <foreach name="cs" item="c" >
+                <tr>
+                    <td>{$c.id}</td>
+                    <td>{$c.name}</td>
+                    <td>
+                        <a href='{:U("Category/Update?id=$c[id]")}' class="btn btn-primary active" role="button">{:L('ACTIONUPDATE')}</a>
+                        <button type="button" class="btn btn-danger active" onclick="toDel({$c.id})">{:L('ACTIONDEL')}</button>
+                        <button type="button" class="btn btn-default active">{:L('ACTIONMOVEUP')}</button>
+                        <button type="button" class="btn btn-default active">{:L('ACTIONMOVEDOWN')}</button>
+                    </td>
+                </tr>
+                
+            </foreach >
+        </tbody>
+    </table>
+</div>
+</block>

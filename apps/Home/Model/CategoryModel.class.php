@@ -5,6 +5,6 @@ use Think\Model;
  * 
  */
 class CategoryModel extends Model {
-	protected $fields = array('id', 'name', 'desc');
+	protected $fields = array('id', 'name', 'desc','order','active');
     protected $pk     = 'id';
 }

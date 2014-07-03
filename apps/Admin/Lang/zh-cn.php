@@ -19,9 +19,24 @@ return array(
     
     'CATEGORYST'     => "分类设置",
     'CATEGORYNAME'     => "分类名称",
+    'CATEGORYDESC'   => "分类描述",
     
     'PRODUCTST'      => "产品设置",
     'PRODUCTNAME'      => "产品名称",
     
     'PAGEST'         => "页面设置",
+    
+    'BTNSUBMIT'     => '提交',
+    'BTNCANCEL'     => '取消',
+    
+    'MSGADDSUCC'   => '成功添加记录！',
+    'MSGADDERROR'  => '添加记录出错！',
+    'MSGUPDATESUCC'  => '成功更新记录！',
+    'MSGUPDATEERROR'  => '更新记录出错！',
+    'MSGDELALERT' => '你确定要删除该条记录吗？',
+    'MSGDELSUCC'   => '成功删除记录！',
+    
+    'MSGRECORDNOTEXIST'  => '记录不存在！',
+    'MSGNOID'  =>'没有提供ID！',
+    'MSGNONAME'  =>'没有提供名称！',
 );

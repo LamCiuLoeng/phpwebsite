@@ -52,6 +52,7 @@ class Category( DeclarativeBase, SysMixin ):
     id = Column( Integer, autoincrement = True, primary_key = True )
     name = Column( Unicode( 100 ), nullable = False )
     desc = Column( Text )
+    order = Column( Integer )
 
 
 

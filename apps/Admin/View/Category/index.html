@@ -7,19 +7,21 @@
     });
     
     function toDel(id){
-        
+        if(window.confirm('{:L("MSGDELALERT")}')){
+            window.location.href = '{:U("Category/del",NULL,'')}' + '/' + id;
+        }
     }
     </script>
 </block>
 
 
 <block name="content">
+    
 <h1 class="page-header">{:L('CATEGORYST')}</h1><a href={:U("Category/Add")} class="btn btn-lg btn-primary active" role="button">{:L('ACTIONADD')}</a>
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
             <tr>
-              <th>#</th>
               <th>{:L('CATEGORYNAME')}</th>
               <th>{:L('ACTION')}</th>
             </tr>
@@ -27,7 +29,6 @@
         <tbody>
             <foreach name="cs" item="c" >
                 <tr>
-                    <td>{$c.id}</td>
                     <td>{$c.name}</td>
                     <td>
                         <a href='{:U("Category/Update?id=$c[id]")}' class="btn btn-primary active" role="button">{:L('ACTIONUPDATE')}</a>

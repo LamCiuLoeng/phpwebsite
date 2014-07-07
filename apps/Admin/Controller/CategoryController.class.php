@@ -22,7 +22,7 @@ class CategoryController extends Controller {
         
         $Category = M('Category');
         $Category->data($data)->add();
-        $this->success(L('FORMADDSUCC'), U('index'));
+        $this->success(L('MSGADDSUCC'), U('index'));
     }
     
     public function update($id='')
@@ -30,7 +30,7 @@ class CategoryController extends Controller {
         $Category = M('Category');
         $c = $Category->where('id = '.$id)->find();
         if (is_null($c)) {
-            $this->redirect('Category/index','',1,L('RECORDNOTEXIST'));
+            $this->redirect('Category/index','',1,L('MSGRECORDNOTEXIST'));
         }
         $this->c = $c; 
         $this->display();
@@ -51,7 +51,7 @@ class CategoryController extends Controller {
         $Category = M('Category');
         $Category->where('id = '.$id)->save($data);
         
-        $this->success(L('FORMUPDATESUCC'), U('index'));
+        $this->success(L('MSGUPDATESUCC'), U('index'));
     }
     
     

@@ -23,6 +23,8 @@ return array(
     
     'PRODUCTST'      => "Product Setting",
     'PRODUCTNAME'      => "Product Name",
+    'PRODUCTDESC'   => "Product Description",
+    'PRODUCTDIMG'   => "Product Image",
     
     'PAGEST'         => "Page Setting",
     

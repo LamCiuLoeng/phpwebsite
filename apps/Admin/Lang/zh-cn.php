@@ -23,6 +23,8 @@ return array(
     
     'PRODUCTST'      => "产品设置",
     'PRODUCTNAME'      => "产品名称",
+    'PRODUCTDESC'   => "产品描述",
+    'PRODUCTDIMG'   => "产品图片",
     
     'PAGEST'         => "页面设置",
     

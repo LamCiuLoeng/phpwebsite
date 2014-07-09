@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
-class CategoryController extends Controller {
+use Admin\Controller\BaseController;
+class CategoryController extends BaseController {
     public function index(){
         $Category = M('Category');
         

@@ -6,9 +6,11 @@ return array(
     /* core language pachage */ 
     'PROJECTNAME'    => "Changuan Hardware Factory",
     'DASHBOARD'      => "Dashboard",
-    'LOGOUT'         => "Logout",
+
     'PROFILE'        => "Profile",
     'HOMEPAGEST'     => "Home Page Setting",
+    'ACCOUNT'        => "Account",
+    'PASSWORD'       => "Password",
     
     'ACTION'         => "Action",
     'ACTIONADD'         => "Add",
@@ -16,6 +18,10 @@ return array(
     'ACTIONDEL'         => "Delete",
     'ACTIONMOVEUP'         => "Move Up",
     'ACTIONMOVEDOWN'         => "Move Down",
+    
+    'ACTIONLOGIN'    => "Login",
+    'ACTIONLOGOUT'   => "Logout",
+    
     
     'CATEGORYST'     => "Category Setting",
     'CATEGORYNAME'   => "Category Name",
@@ -41,4 +47,9 @@ return array(
     'MSGRECORDNOTEXIST'  => 'The record does not exist!',
     'MSGNOID'  =>'Id does not provided!',
     'MSGNONAME'  =>'Name does not provided!',
+    
+    'MSGSIGNIN'  => 'Please sign in',
+    'MSGREMEMBERME'  => 'Remember me',
+    'MSGNONAMEPASSWORD'  => 'Account or password could not be blank!',
+    'MSGNAMEPASSWORDWRONG'  => 'Account does not exist or wrong password!',
 );

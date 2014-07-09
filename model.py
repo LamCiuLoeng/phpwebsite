@@ -65,6 +65,8 @@ class Product( DeclarativeBase, SysMixin ):
     desc = Column( Text )
     category_id = Column( Integer, ForeignKey( 'thinkphp_category.id' ) )
     category = relation( Category )
+    img = Column( Text )
+    thumb = Column( Text )
 
 
 class FileObject( DeclarativeBase, SysMixin ):

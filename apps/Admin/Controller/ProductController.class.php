@@ -1,7 +1,7 @@
 <?php
 namespace Admin\Controller;
-use Think\Controller;
-class ProductController extends Controller {
+use Admin\Controller\BaseController;
+class ProductController extends BaseController {
     public function index(){
         $Product = M('Product');
         
@@ -22,18 +22,19 @@ class ProductController extends Controller {
         $data['name'] = I('post.name','','stripped');
         $data['desc'] = I('post.desc','','stripped');
         $data['category_id'] = I('post.category_id');
+        $data['active'] = 0;
         
         $info = $this->upload_img('img');
         
         if($info[0] != 0){
             echo $info[1];
         }else{
-            echo $info[2];
+            $data['img'] = $info[2];
         }
-//         
-        // $Product = M('Product');
-        // $Product->data($data)->add();
-        // $this->success(L('MSGADDSUCC'), U('index'));
+        
+        $Product = M('Product');
+        $Product->data($data)->add();
+        $this->success(L('MSGADDSUCC'), U('index'));
     }
     
     
@@ -54,7 +55,8 @@ class ProductController extends Controller {
     {
         $config = array(    
                             //'maxSize'    =>    3145728,    
-                            'savePath'   =>    './Public/Uploadsaa/',    
+                            'rootPath'   =>    './Public/',
+                            'savePath'   =>    'Upload/',    
                             'saveName'   =>    array('uniqid',''),    
                             'exts'       =>    array('jpg', 'gif', 'png', 'jpeg'),    
                             'autoSub'    =>    true,    
@@ -66,14 +68,14 @@ class ProductController extends Controller {
         }    
         $result = array(); 
         $info   =   $upload->uploadOne($_FILES[$name]);  
-        echo $info['savepath'];  
+        
         if(!$info) {// 上传错误提示错误信息        
             $result[] = 1;
             $result[] = $upload->getError();    
         }else{// 上传成功     
             $result[] = 0;
             $result[] = NULL;
-            $result[] = $info['savepath'].$info['savename'];
+            $result[] = $info['rootpath'].$info['savepath'].$info['savename'];
         }
         return $result;
     }

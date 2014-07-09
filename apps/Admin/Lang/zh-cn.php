@@ -6,9 +6,11 @@ return array(
     /* 核心语言变量 */  
     'PROJECTNAME'    => "某某工厂",
     'DASHBOARD'      => "控制台",
-    'LOGOUT'         => "退出",
+
     'PROFILE'        => "账户信息",
     'HOMEPAGEST'     => "首页设置",
+    'ACCOUNT'        => "账户",
+    'PASSWORD'       => "密码",
     
     'ACTION'         => "操作",
     'ACTIONADD'         => "添加",
@@ -16,6 +18,9 @@ return array(
     'ACTIONDEL'         => "删除",
     'ACTIONMOVEUP'         => "上升",
     'ACTIONMOVEDOWN'         => "下降",
+    
+    'ACTIONLOGIN'    => "登录",
+    'ACTIONLOGOUT'   => "注销",
     
     'CATEGORYST'     => "分类设置",
     'CATEGORYNAME'     => "分类名称",
@@ -41,4 +46,9 @@ return array(
     'MSGRECORDNOTEXIST'  => '记录不存在！',
     'MSGNOID'  =>'没有提供ID！',
     'MSGNONAME'  =>'没有提供名称！',
+    
+    'MSGSIGNIN'  => '请登入',
+    'MSGREMEMBERME'  => '记住我',
+    'MSGNONAMEPASSWORD'  => '账号或者密码不能为空！',
+    'MSGNAMEPASSWORDWRONG'  => '账户不存在或者密码错误！',
 );

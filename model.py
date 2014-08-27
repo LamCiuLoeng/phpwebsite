@@ -73,11 +73,20 @@ class FileObject( DeclarativeBase, SysMixin ):
     __tablename__ = 'thinkphp_file_object'
 
     id = Column( Integer, autoincrement = True, primary_key = True )
-    name = Column( Unicode( 100 ), nullable = False )
+    name = Column( Unicode( 1000 ), nullable = False )
     path = Column( Unicode( 500 ) )
     url = Column( Unicode( 500 ) )
     type = Column( Unicode( 100 ) )
 
+
+class PageObject( DeclarativeBase, SysMixin ):
+    __tablename__ = 'thinkphp_page_object'
+
+    id = Column( Integer, autoincrement = True, primary_key = True )
+    title = name = Column( Unicode( 1000 ), nullable = False )
+    content = Column( Text )
+    menu = Column( Integer, default = 0 )  # 0 show in the menu ,1 doesn't
+    seq = Column( Integer )
 
 
 

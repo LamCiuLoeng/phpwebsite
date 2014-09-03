@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-	<header>
+	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-		<block name="title"><title>MyShop V0.1</title></block>
+		<block name="title"><title>{:L('MENUWEBSITENAME')}</title></block>
 		
 		<!-- Bootstrap -->
     	<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
     	<link href="__PUBLIC__/css/bootstrap-theme.min.css" rel="stylesheet">
+    	<link href="__PUBLIC__/css/offcanvas.css" rel="stylesheet">
     	
     	<block name="extCSS"></block>
     	
@@ -17,10 +18,10 @@
     	<script src="__PUBLIC__/js/bootstrap.min.js"></script>
     	
     	<block name="extJS"></block>
-	</header>
+	</head>
 	<body>
 		<!-- Fixed navbar -->
-	    <div class="navbar navbar-inverse navbar-fixed-top " role="navigation">
+	    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
 	      <div class="container">
 	        <div class="navbar-header">
 	          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -29,18 +30,18 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="navbar-brand" href="/index.php">{:L('PROJECTNAME')}</a>
+	          <a class="navbar-brand" href="/index.php">{:L('MENUWEBSITENAME')}</a>
 	        </div>
 	        <div class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="#">首页</a></li>
-	            <li><a href="#about">公司简介</a></li>
-	            <li><a href="#about">公司风采</a></li>
+	            <li class="active"><a href="{:U('Index/index')}">{:L('MENUHOME')}</a></li>
+	            <li><a href="{:U('Index/page',array('name'=>'INTRODUCE'))}">{:L('MENUINTRODUCE')}</a></li>
+	            <li><a href="{:U('Index/page',array('name'=>'ABOUTUS'))}">{:L('MENUABOUTUS')}</a></li>
 	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">产品展示 <b class="caret"></b></a>
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{:L('MENUPRODUCT')}<b class="caret"></b></a>
 	                {:W('Category/Hmenu')}
 	            </li>
-	            <li><a href="#contact">联系我们</a></li>
+	            <li><a href="{:U('Index/page',array('name'=>'CONTACT'))}">{:L('MENUCONTACT')}</a></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>

@@ -61,8 +61,10 @@ class Product( DeclarativeBase, SysMixin ):
     __tablename__ = 'thinkphp_product'
 
     id = Column( Integer, autoincrement = True, primary_key = True )
-    name = Column( Unicode( 100 ), nullable = False )
-    desc = Column( Text )
+    en_name = Column( Unicode( 500 ) )
+    cn_name = Column( Unicode( 500 ) )
+    en_desc = Column( Text )
+    cn_desc = Column( Text )
     category_id = Column( Integer, ForeignKey( 'thinkphp_category.id' ) )
     category = relation( Category )
     img = Column( Text )
@@ -83,10 +85,11 @@ class PageObject( DeclarativeBase, SysMixin ):
     __tablename__ = 'thinkphp_page_object'
 
     id = Column( Integer, autoincrement = True, primary_key = True )
-    title = name = Column( Unicode( 1000 ), nullable = False )
-    content = Column( Text )
-    menu = Column( Integer, default = 0 )  # 0 show in the menu ,1 doesn't
-    seq = Column( Integer )
+    name = Column( Unicode( 1000 ), nullable = False )
+    en_title = Column( Unicode( 1000 ) )
+    cn_title = Column( Unicode( 1000 ) )
+    en_content = Column( Text )
+    cn_content = Column( Text )
 
 
 
@@ -109,7 +112,12 @@ def init():
     DBSession.add_all( cs )
     for i, c in enumerate( cs ):
         for j in range( 5 ):
-            DBSession.add( Product( name = "Product-%s-%s" % ( i, j ), category = c ) )
+            DBSession.add( Product( en_name = "Product-%s-%s" % ( i, j ), cn_name = u"产品-%s-%s" % ( i, j ), category = c ) )
+
+    DBSession.add( PageObject( name = "INTRODUCE", en_title = 'Introduce', cn_title = u'公司简介' ) )
+    DBSession.add( PageObject( name = "ABOUTUS", en_title = 'About US', cn_title = u'公司风采' ) )
+    DBSession.add( PageObject( name = "CONTACT", en_title = 'Contact US', cn_title = u'联系我们' ) )
+
     DBSession.commit()
     print "Done"
 

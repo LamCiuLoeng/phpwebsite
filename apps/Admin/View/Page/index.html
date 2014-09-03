@@ -1,8 +1,51 @@
 <extend name="Public:base" />
 
+<block name="extJS">
+<script language="JavaScript" type="text/javascript">
+//<![CDATA[
+		$(document).ready(function(){
+            
+        });
+        
+        
+		function toDel(id){
+		        if(window.confirm('{:L("MSGDELALERT")}')){
+		            window.location.href = '{:U("Page/del",NULL,'')}' + '/id/' + id;
+		        }
+		    }
+//]]>
+</script>
+
+</block>
 <block name="content">
 <h1 class="page-header">{:L('PAGEST')}</h1>
-
+<!--
+<a href='{:U("Page/Add")}' class="btn btn-lg btn-primary active" role="button">{:L('ACTIONADD')}</a>
+-->
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+              <th>{:L('PAGEENTITLE')}</th>
+              <th>{:L('PAGECNTITLE')}</th>
+              <th>{:L('ACTION')}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <foreach name="result" item="p" >
+                <tr>
+                    <td>{$p.en_title}</td>
+                    <td>{$p.cn_title}</td>
+                    <td>
+                        <a href='{:U("Page/Edit?id=$p[id]")}' class="btn btn-primary active" role="button">{:L('ACTIONUPDATE')}</a>
+                        <button type="button" class="btn btn-danger active" onclick="toDel({$p.id})">{:L('ACTIONDEL')}</button>
+                    </td>
+                </tr>
+                
+            </foreach >
+        </tbody>
+    </table>
+</div>
 
 
 </block>

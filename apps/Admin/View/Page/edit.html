@@ -7,7 +7,7 @@
     <script type="text/javascript">
     $(document).ready(function(){
         KindEditor.ready(function(K) {
-			var editor1 = K.create('#desc', {
+			var editor1 = K.create('.content', {
 				cssPath : '__PUBLIC__/js/kindeditor-4.1.10/plugins/code/prettify.css',
 				uploadJson : '__PUBLIC__/js/kindeditor-4.1.10/php/upload_json.php',
 				fileManagerJson : '__PUBLIC__/js/kindeditor-4.1.10/php/file_manager_json.php',
@@ -64,36 +64,36 @@
 
 
 <block name="content">
-<h1 class="page-header">{:L('PRODUCTST')}</h1>
-    <form class="form-horizontal" role="form" action='{:U("Product/save_add")}' method="POST"  enctype="multipart/form-data">
+<h1 class="page-header">{:L('PAGEST')}</h1>
+    <form class="form-horizontal" role="form" action='{:U("Page/save_edit")}' method="POST"  enctype="multipart/form-data">
+    	  <input type="hidden" name="id" value="{$p['id']}"/>
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PRODUCTNAME')}</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PAGEENTITLE')}</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="name" name="name" placeholder="{:L('PRODUCTNAME')}">
+              <input type="text" class="form-control" id="en_title" name="en_title" placeholder="{:L('PAGEENTITLE')}" value="{$p['en_title']}">
             </div>
           </div>
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">{:L('CATEGORYNAME')}</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PAGECNTITLE')}</label>
             <div class="col-sm-10">
-              <select name="category_id" id="category_id" class="form-control">
-                  <foreach name="cs" item="c">
-                      <option value="{$c.id}">{$c.name}</option>
-                  </foreach>
-              </select>
+              <input type="text" class="form-control" id="cn_title" name="cn_title" placeholder="{:L('PAGECNTITLE')}" value="{$p['cn_title']}">
             </div>
           </div>
+
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PRODUCTDESC')}</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PAGEENCONTENT')}</label>
             <div class="col-sm-10">
-                <textarea class="form-control" rows="10" id="desc" name="desc"></textarea>
+                <textarea class="form-control content" rows="10" id="en_content" name="en_content">{$p['en_content']}</textarea>
             </div>
           </div>
-          <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PRODUCTDIMG')}</label>
+		
+		 <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PAGECNCONTENT')}</label>
             <div class="col-sm-10">
-              <input type="file" class="form-control" id="img" name="img">
+                <textarea class="form-control content" rows="10" id="cn_content" name="cn_content">{$p['cn_content']}</textarea>
             </div>
           </div>
+
           <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                    <button type="submit" class="btn btn-primary">{:L('BTNSUBMIT')}</button>

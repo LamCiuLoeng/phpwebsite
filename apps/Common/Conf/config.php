@@ -16,4 +16,6 @@ return array(
      'LANG_AUTO_DETECT' => false, // 自动侦测语言 开启多语言功能后有效
      'DEFAULT_LANG' => 'zh-cn',
      // 'DEFAULT_LANG' => 'en-us',
+     
+     'EVERY_PAGE_NUMBER' => 6,
 );

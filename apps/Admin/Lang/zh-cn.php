@@ -32,6 +32,10 @@ return array(
     'PRODUCTDIMG'   => "产品图片",
     
     'PAGEST'         => "页面设置",
+    'PAGEENTITLE'         => "英文页面标题",
+    'PAGECNTITLE'         => "中文页面标题",
+    'PAGEENCONTENT'         => "英文页面内容",
+    'PAGECNCONTENT'         => "中文页面内容",
     
     'BTNSUBMIT'     => '提交',
     'BTNCANCEL'     => '取消',

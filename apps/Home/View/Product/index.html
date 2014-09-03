@@ -1,0 +1,12 @@
+<extend name="Public:base" />
+
+
+<block name="content">
+	<div class="container">
+		<h1>{$p['en_name']}</h1>
+		<php>echo htmlspecialchars_decode($p['en_desc']);</php>
+		<h1>{$p['cn_name']}</h1>
+		<php>echo htmlspecialchars_decode($p['cn_desc']);</php>
+	</div> <!-- container -->
+	
+</block>

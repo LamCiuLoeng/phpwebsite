@@ -33,6 +33,10 @@ return array(
     'PRODUCTDIMG'   => "Product Image",
     
     'PAGEST'         => "Page Setting",
+    'PAGEENTITLE'         => "English Page Title",
+    'PAGECNTITLE'         => "Chinese Page Title",
+    'PAGEENCONTENT'         => "English Page Content",
+    'PAGECNCONTENT'         => "Chinese Page Content",
     
     'BTNSUBMIT'     => 'Submit',
     'BTNCANCEL'     => 'Cancel',

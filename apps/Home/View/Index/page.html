@@ -3,7 +3,22 @@
 
 <block name="content">
 	<div class="container">
-		<h1>{$page['en_title']}</h1>
-		<php>echo htmlspecialchars_decode($page['en_content']);</php>
+		<div class="row">
+			<ol class="breadcrumb">
+			  <li><a href="{:U('Index/index')}">{:L('MENUHOME')}</a></li>
+			  <li class="active"><?php echo ML( $page['en_title'],$page['cn_title'] )?></li>
+			</ol>
+		</div>
+		<div class="row">
+			<h1><?php echo ML( $page['en_title'],$page['cn_title'] )?></h1>
+			<?php
+				if(LANG_SET == 'en-us'){
+					echo htmlspecialchars_decode($page['en_content']);
+				} 
+				else if(LANG_SET == 'zh-cn'){
+					echo htmlspecialchars_decode($page['cn_content']);
+				}
+			?>
+		</div>
 	</div>
 </block>

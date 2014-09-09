@@ -4,6 +4,7 @@ use Think\Controller;
 class IndexController extends Controller {
     public function index(){
         $this->hello = L('HELLOWORLD');
+		$this->name = ML('hello 2','你好');
     	$this->display();
 	}
 	

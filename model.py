@@ -50,8 +50,10 @@ class Category( DeclarativeBase, SysMixin ):
     __tablename__ = 'thinkphp_category'
 
     id = Column( Integer, autoincrement = True, primary_key = True )
-    name = Column( Unicode( 100 ), nullable = False )
-    desc = Column( Text )
+    en_name = Column( Unicode( 1000 ) )
+    cn_name = Column( Unicode( 1000 ) )
+    en_desc = Column( Text )
+    cn_desc = Column( Text )
     order = Column( Integer )
 
 
@@ -104,10 +106,10 @@ def init():
     DBSession.add( User( name = "admin", password = "password", email = "lamciuloeng@gmail.com" ) )
     # default category
     cs = [
-           Category( name = u"地弹簧" ), Category( name = u"闭门器" ), Category( name = u"门夹" ),
-           Category( name = u"配件" ), Category( name = u"门锁" ), Category( name = u"浴室夹" ),
-           Category( name = u"玻璃门拉手" ), Category( name = u"门执手" ), Category( name = u"玻璃连接件" ),
-           Category( name = u"浴室固定件" ),
+           Category( cn_name = u"地弹簧" ), Category( cn_name = u"闭门器" ), Category( cn_name = u"门夹" ),
+           Category( cn_name = u"配件" ), Category( cn_name = u"门锁" ), Category( cn_name = u"浴室夹" ),
+           Category( cn_name = u"玻璃门拉手" ), Category( cn_name = u"门执手" ), Category( cn_name = u"玻璃连接件" ),
+           Category( cn_name = u"浴室固定件" ),
            ]
     DBSession.add_all( cs )
     for i, c in enumerate( cs ):

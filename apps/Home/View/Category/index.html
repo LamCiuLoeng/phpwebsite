@@ -4,10 +4,17 @@
 <block name="content">
 	<div class="container">
 		<div class="row">
+			<ol class="breadcrumb">
+			  <li>{:L('MENUHOME')}</li>
+			  <li>{:L('MENUPRODUCT')}</li>
+			  <li class="active"><a href="{:U('Category/Index',array('id'=>$c['id']))}"><?php echo ML( $c['en_name'],$c['cn_name'] )?></a></li>
+			</ol>
+		</div>
+		<div class="row">
     		<foreach name="ps" item="p">
               <div class="col-xs-6 col-md-3">
                 <a href="{:U('Product/index',array('id' => $p['id']))}" class="thumbnail"><img src="__PUBLIC__/{$p.img}">
-                	{$p['en_name']} / {$p['cn_name']}
+                	<?php echo ML( $p['en_name'],$p['cn_name'] )?>
                 </a>
               </div>
             </foreach>

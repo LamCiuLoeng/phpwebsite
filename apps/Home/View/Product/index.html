@@ -3,10 +3,17 @@
 
 <block name="content">
 	<div class="container">
-		<h1>{$p['en_name']}</h1>
-		<php>echo htmlspecialchars_decode($p['en_desc']);</php>
-		<h1>{$p['cn_name']}</h1>
-		<php>echo htmlspecialchars_decode($p['cn_desc']);</php>
+		<h1><?php echo ML( $p['en_name'],$p['cn_name'] )?></h1>
+		<?php
+			if(LANG_SET == 'en-us'){
+				echo htmlspecialchars_decode($p['en_desc']);
+			} 
+			else if(LANG_SET == 'zh-cn'){
+				echo htmlspecialchars_decode($p['cn_desc']);
+			}
+		?>
+		
+		
 	</div> <!-- container -->
 	
 </block>

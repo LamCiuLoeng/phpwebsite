@@ -10,7 +10,7 @@ return array(
     'MENUPRODUCT' => "Product",
     'MENUABOUTUS' => "About US",
     'MENUCONTACT' => "Contact",
-    
+    'MENULANGUAGE' => "Language",
     
     'PAGENOTEXIST'     => "The page does not exist!",    
     'PRODUCTNOTEXIST'     => "The product does not exist!",

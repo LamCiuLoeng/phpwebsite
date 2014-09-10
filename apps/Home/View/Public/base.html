@@ -34,14 +34,18 @@
 	        </div>
 	        <div class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav">
-	            <li class="active"><a href="{:U('Index/index')}">{:L('MENUHOME')}</a></li>
-	            <li><a href="{:U('Index/page',array('name'=>'INTRODUCE'))}">{:L('MENUINTRODUCE')}</a></li>
-	            <li><a href="{:U('Index/page',array('name'=>'ABOUTUS'))}">{:L('MENUABOUTUS')}</a></li>
-	            <li class="dropdown">
-	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">{:L('MENUPRODUCT')}<b class="caret"></b></a>
+	          	<eq name="highlight" value="HOME"><li class="active"><else/><li></eq><a href="{:U('Index/index')}">{:L('MENUHOME')}</a></li>
+
+	            <eq name="highlight" value="INTRODUCE"><li class="active"><else/><li></eq><a href="{:U('Index/page',array('name'=>'INTRODUCE'))}">{:L('MENUINTRODUCE')}</a></li>
+
+	            <eq name="highlight" value="ABOUTUS"><li class="active"><else/><li></eq><a href="{:U('Index/page',array('name'=>'ABOUTUS'))}">{:L('MENUABOUTUS')}</a></li>
+
+	            <eq name="highlight" value="PRODUCT"><li class="active dropdown"><else/><li class="dropdown"></eq><a href="#" class="dropdown-toggle" data-toggle="dropdown">{:L('MENUPRODUCT')}<b class="caret"></b></a>
 	                {:W('Category/Hmenu')}
 	            </li>
-	            <li><a href="{:U('Index/page',array('name'=>'CONTACT'))}">{:L('MENUCONTACT')}</a></li>
+
+	            <eq name="highlight" value="CONTACT"><li class="active"><else/><li></eq><a href="{:U('Index/page',array('name'=>'CONTACT'))}">{:L('MENUCONTACT')}</a></li>
+	            
 	          </ul>
 	          <ul class="nav navbar-nav navbar-right">
 	            <li class="dropdown">

@@ -7,7 +7,7 @@
     <script type="text/javascript">
     $(document).ready(function(){
         KindEditor.ready(function(K) {
-			var editor1 = K.create('#desc', {
+			var editor1 = K.create('.desc', {
 				cssPath : '__PUBLIC__/js/kindeditor-4.1.10/plugins/code/prettify.css',
 				uploadJson : '__PUBLIC__/js/kindeditor-4.1.10/php/upload_json.php',
 				fileManagerJson : '__PUBLIC__/js/kindeditor-4.1.10/php/file_manager_json.php',
@@ -67,9 +67,15 @@
 <h1 class="page-header">{:L('PRODUCTST')}</h1>
     <form class="form-horizontal" role="form" action='{:U("Product/save_add")}' method="POST"  enctype="multipart/form-data">
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PRODUCTNAME')}</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PRODUCTENNAME')}</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="name" name="name" placeholder="{:L('PRODUCTNAME')}">
+              <input type="text" class="form-control" id="en_name" name="en_name" placeholder="{:L('PRODUCTENNAME')}">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PRODUCTCNNAME')}</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="cn_name" name="cn_name" placeholder="{:L('PRODUCTCNNAME')}">
             </div>
           </div>
           <div class="form-group">
@@ -77,15 +83,21 @@
             <div class="col-sm-10">
               <select name="category_id" id="category_id" class="form-control">
                   <foreach name="cs" item="c">
-                      <option value="{$c.id}">{$c.name}</option>
+                      <option value="{$c.id}">{$c.cn_name} ( {$c.en_name} )</option>
                   </foreach>
               </select>
             </div>
           </div>
           <div class="form-group">
-            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PRODUCTDESC')}</label>
+            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PRODUCTENDESC')}</label>
             <div class="col-sm-10">
-                <textarea class="form-control" rows="10" id="desc" name="desc"></textarea>
+                <textarea class="form-control desc" rows="10" id="en_desc" name="en_desc"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-2 control-label">{:L('PRODUCTCNDESC')}</label>
+            <div class="col-sm-10">
+                <textarea class="form-control desc" rows="10" id="cn_desc" name="cn_desc"></textarea>
             </div>
           </div>
           <div class="form-group">

@@ -22,8 +22,10 @@
         <thead>
             <tr>
               <th>#</th>
-              <th>{:L('PRODUCTNAME')}</th>
-              <th>{:L('CATEGORYNAME')}</th>
+              <th>{:L('PRODUCTENNAME')}</th>
+              <th>{:L('PRODUCTCNNAME')}</th>
+              <th>{:L('CATEGORYENNAME')}</th>
+              <th>{:L('CATEGORYCNNAME')}</th>
               <th>{:L('ACTION')}</th>
             </tr>
         </thead>
@@ -31,10 +33,12 @@
             <foreach name="ps" item="p" >
                 <tr>
                     <td>{$p.id}</td>
-                    <td>{$p.name}</td>
+                    <td>{$p.en_name}</td>
+                    <td>{$p.cn_name}</td>
+                    <td></td>
                     <td></td>
                     <td>
-                        <a href='{:U("Category/Update?id=$c[id]")}' class="btn btn-primary active" role="button">{:L('ACTIONUPDATE')}</a>
+                        <a href='{:U("Product/Update",array("id" => $p["id"]))}' class="btn btn-primary active" role="button">{:L('ACTIONUPDATE')}</a>
                         <button type="button" class="btn btn-danger active" onclick="toDel({$p.id})">{:L('ACTIONDEL')}</button>
                     </td>
                 </tr>

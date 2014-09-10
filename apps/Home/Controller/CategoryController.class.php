@@ -18,7 +18,8 @@ class CategoryController extends Controller {
   		
 		$count = $Product->where($condition)->count();
 		$Page = new \Think\Page($count,$pagenumber);
-		$this->assign('page',$Page->show());
+        $this->assign('page',$Page->show());
+        $this->highlight = "PRODUCT";
     	$this->display();
 	}
 }

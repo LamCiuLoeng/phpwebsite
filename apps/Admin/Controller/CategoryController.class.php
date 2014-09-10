@@ -7,11 +7,13 @@ class CategoryController extends BaseController {
         
         $cs = $Category->where('active = 0')->select();
         $this->cs = $cs;
+        $this->highlight = "ADMINCATEGORY";
         $this->display();
     }
     
     public function add()
     {
+        $this->highlight = "ADMINCATEGORY";
         $this->display();
     }
     
@@ -33,6 +35,7 @@ class CategoryController extends BaseController {
             $this->redirect('Category/index','',1,L('MSGRECORDNOTEXIST'));
         }
         $this->c = $c; 
+        $this->highlight = "ADMINCATEGORY";
         $this->display();
     }
     

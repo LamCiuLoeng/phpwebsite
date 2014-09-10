@@ -6,10 +6,13 @@ class PageController extends BaseController {
         $M = M("PageObject");
         $ps = $M->where(array('active' => 0))->select();
         $this->result = $ps;
+        $this->highlight = "ADMINPAGE";
         $this->display();
     }
     
-    public function add(){
+    public function add()
+    {
+    	$this->highlight = "ADMINPAGE";
         $this->display();
     }
     
@@ -37,6 +40,7 @@ class PageController extends BaseController {
 			$this->error(L('MSGRECORDNOTEXIST'));
 		}
 		$this->p = $p;
+		$this->highlight = "ADMINPAGE";
 		$this->display();
     }
 		
@@ -68,12 +72,12 @@ class PageController extends BaseController {
         $M = M("PageObject");
         $p = $M->where(array('active' => 0 , 'id' => intval($id)))->find();
         if(!$p || is_null($p)){
-            $this->error("该记录不存在！");
+            $this->error(L("MSGRECORDNOTEXIST"));
         }
         
         $tmp['active'] = 1;
         $M->where(array('id' => $p['id']))->save($tmp);
-        $this->success('成功删除该页面！',U('Page/index'));
+        $this->success(L('MSGDELSUCC'),U('Page/index'));
     }
     
 }

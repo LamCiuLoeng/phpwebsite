@@ -7,6 +7,7 @@ class ProductController extends BaseController {
         
         $ps = $Product->where("active = 0")->select();
         $this->ps = $ps;
+        $this->highlight = "ADMINPRODUCT";
         $this->display();
     }
     
@@ -14,14 +15,17 @@ class ProductController extends BaseController {
     {
         $Category = M('Category');
         $this->cs = $Category->where('active = 0')->select();
+        $this->highlight = "ADMINPRODUCT";
         $this->display();
     }
     
     public function save_add()
     {
-        $data['name'] = I('post.name','','stripped');
-        $data['desc'] = I('post.desc','','stripped');
-        $data['category_id'] = I('post.category_id');
+        $data['en_name'] = I('en_name','','stripped');
+        $data['cn_name'] = I('cn_name','','stripped');
+        $data['en_desc'] = I('en_desc','','stripped');
+        $data['cn_desc'] = I('cn_desc','','stripped');
+        $data['category_id'] = I('category_id');
         $data['active'] = 0;
         
         $info = $this->upload_img('img');
@@ -78,6 +82,11 @@ class ProductController extends BaseController {
             $result[] = $info['rootpath'].$info['savepath'].$info['savename'];
         }
         return $result;
+    }
+
+
+    public function update(){
+        
     }
     
 }

@@ -24,12 +24,17 @@ return array(
     
     
     'CATEGORYST'     => "Category Setting",
-    'CATEGORYNAME'   => "Category Name",
+    'CATEGORYNAME'     => "Category Name",
+    'CATEGORYENNAME'     => "Category English Name",
+	'CATEGORYCNNAME'     => "Category Chinese Name",
     'CATEGORYDESC'   => "Category Description",
     
     'PRODUCTST'      => "Product Setting",
     'PRODUCTNAME'      => "Product Name",
-    'PRODUCTDESC'   => "Product Description",
+    'PRODUCTENNAME'      => "Product English Name",
+    'PRODUCTCNNAME'      => "Product Chinese Name",
+    'PRODUCTDENESC'   => "Product English Description",
+    'PRODUCTDCNESC'   => "Product Chinese Description",
     'PRODUCTDIMG'   => "Product Image",
     
     'PAGEST'         => "Page Setting",

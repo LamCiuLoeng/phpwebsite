@@ -8,7 +8,7 @@ class ProductController extends Controller {
 		if(!$p || is_null($p)){
 			$this->error(L('PRODUCTNOTEXIST'));
 		}
-		
+		$this->highlight = "PRODUCT";
 		$this->p = $p;
 		$this->display();
 	}

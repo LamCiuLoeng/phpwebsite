@@ -24,11 +24,16 @@ return array(
     
     'CATEGORYST'     => "分类设置",
     'CATEGORYNAME'     => "分类名称",
+    'CATEGORYENNAME'     => "分类中文名称",
+	'CATEGORYCNNAME'     => "分类英文名称",
     'CATEGORYDESC'   => "分类描述",
     
     'PRODUCTST'      => "产品设置",
-    'PRODUCTNAME'      => "产品名称",
-    'PRODUCTDESC'   => "产品描述",
+	'PRODUCTNAME'      => "产品名称",
+	'PRODUCTENNAME'      => "产品英文名称",
+    'PRODUCTCNNAME'      => "产品中文名称",
+    'PRODUCTENDESC'   => "产品英文描述",
+	'PRODUCTCNDESC'   => "产品中文描述",
     'PRODUCTDIMG'   => "产品图片",
     
     'PAGEST'         => "页面设置",

@@ -28,12 +28,12 @@ class ProductController extends BaseController {
         $data['category_id'] = I('category_id');
         $data['active'] = 0;
         
-        $info = $this->upload_img('img');
+        $info = upload_img('img');
         
         if($info[0] != 0){
-            echo $info[1];
+            //echo $info[1];
         }else{
-            $data['img'] = $info[2];
+            $data['img'] = $info[3];
         }
         
         $Product = M('Product');
@@ -53,40 +53,57 @@ class ProductController extends BaseController {
         $Product->where('id = '.$id)->data($data)->save(); 
         $this->success(L('MSGDELSUCC'), U('index'));
     }
-    
-    
-    private function upload_img($name)
-    {
-        $config = array(    
-                            //'maxSize'    =>    3145728,    
-                            'rootPath'   =>    './Public/',
-                            'savePath'   =>    'Upload/',    
-                            'saveName'   =>    array('uniqid',''),    
-                            'exts'       =>    array('jpg', 'gif', 'png', 'jpeg'),    
-                            'autoSub'    =>    true,    
-                            'subName'    =>    array('date','Ymd','time'),
-                         );
-        $upload = new \Think\Upload($config);// 实例化上传类
-        if(!file_exists($upload->savePath)){
-            mkdir($upload->savePath);
-        }    
-        $result = array(); 
-        $info   =   $upload->uploadOne($_FILES[$name]);  
-        
-        if(!$info) {// 上传错误提示错误信息        
-            $result[] = 1;
-            $result[] = $upload->getError();    
-        }else{// 上传成功     
-            $result[] = 0;
-            $result[] = NULL;
-            $result[] = $info['rootpath'].$info['savepath'].$info['savename'];
-        }
-        return $result;
-    }
+
 
 
     public function update(){
+        $id = I("id",null);
+        if(!$id || is_null($id)){
+            $this->error(L("MSGNOID"));
+        }
+
+        $p = M("Product")->where(array('id' => $id))->find();
+        if(!$p || is_null($p)){
+            $this->error(L('MSGRECORDNOTEXIST'));
+        }
+
+        $this->cs = M("Category")->where(array('active' => 0 ))->select();
+        $this->p = $p;
+        $this->highlight = "ADMINPRODUCT";
+        $this->display();
+
+    }
+
+    public function save_update(){
+        $id = I("id",null);
+        if(!$id || is_null($id)){
+            $this->error(L("MSGNOID"));
+        }
+
+        $p = M("Product")->where(array('id' => $id))->find();
+        if(!$p || is_null($p)){
+            $this->error(L('MSGRECORDNOTEXIST'));
+        }
+
+        $data = mydto_edit();
+        $data['en_name'] = I('en_name','','stripped');
+        $data['cn_name'] = I('cn_name','','stripped');
+        $data['en_desc'] = I('en_desc','');
+        $data['cn_desc'] = I('cn_desc','');
+        $data['category_id'] = I('category_id');
+
+        $info = upload_img('img');
         
+        if($info[0] != 0){
+            //echo $info[1];
+        }else{
+            $data['img'] = $info[3];
+        }
+
+        M("Product")->where(array('id' => $p['id']))->save($data);
+        $this->success(L('MSGUPDATESUCC'), U('Product/Index'));
+
+
     }
     
 }

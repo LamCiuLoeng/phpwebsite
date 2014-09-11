@@ -10,15 +10,21 @@
 			</ol>
 		</div>
 		<div class="row">
-			<h1><?php echo ML( $page['en_title'],$page['cn_title'] )?></h1>
-			<?php
-				if(LANG_SET == 'en-us'){
-					echo htmlspecialchars_decode($page['en_content']);
-				} 
-				else if(LANG_SET == 'zh-cn'){
-					echo htmlspecialchars_decode($page['cn_content']);
-				}
-			?>
+			<div class="panel panel-default">
+			  <div class="panel-heading"><h2 class="panel-title"><?php echo ML( $page['en_title'],$page['cn_title'] )?></h2></div>
+			  <div class="panel-body">
+			    <?php
+					if(LANG_SET == 'en-us'){
+						echo htmlspecialchars_decode($page['en_content']);
+					} 
+					else if(LANG_SET == 'zh-cn'){
+						echo htmlspecialchars_decode($page['cn_content']);
+					}
+				?>
+			  </div>
+			</div>
+
+
 		</div>
 	</div>
 </block>

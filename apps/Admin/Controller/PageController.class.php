@@ -79,5 +79,15 @@ class PageController extends BaseController {
         $M->where(array('id' => $p['id']))->save($tmp);
         $this->success(L('MSGDELSUCC'),U('Page/index'));
     }
+
+    // public function ajax_upload(){
+    // 	$result = upload_img("imgFile");
+    // 	if($result[0] == 0){
+    // 		$this->ajaxReturn(array('error' => 0 , 'url' => $result[3]));
+    // 	}else{
+    // 		$this->ajaxReturn(array('error' => 1,'message' => L('MSGUPLOADFAIL')));
+    // 	}
+    // }
+
     
 }

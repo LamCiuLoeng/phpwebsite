@@ -2,14 +2,14 @@
 
 <block name="extJS">
 	<script charset="utf-8" src="__PUBLIC__/js/kindeditor-4.1.10/kindeditor.js"></script>
-	<script charset="utf-8" src="__PUBLIC__/js/kindeditor-4.1.10/lang/zh_CN.js"></script>
+	<script charset="utf-8" src="__PUBLIC__/js/kindeditor-4.1.10/lang/{:ML('en.js','zh_CN.js')}"></script>
 	<script charset="utf-8" src="__PUBLIC__/js/kindeditor-4.1.10/plugins/code/prettify.js"></script>
     <script type="text/javascript">
     $(document).ready(function(){
         KindEditor.ready(function(K) {
 			var editor1 = K.create('.content', {
 				cssPath : '__PUBLIC__/js/kindeditor-4.1.10/plugins/code/prettify.css',
-				uploadJson : '__PUBLIC__/js/kindeditor-4.1.10/php/upload_json.php',
+				uploadJson : '{:U("Index/ajax_upload")}',
 				fileManagerJson : '__PUBLIC__/js/kindeditor-4.1.10/php/file_manager_json.php',
 				allowFileManager : true,
 				afterCreate : function() {
@@ -18,7 +18,7 @@
 						var content=$('.ke-edit-iframe').contents().find('body');
 						
 						if(content.html()=='<br>'){
-							alert('内容不能为空！');
+							alert("{:L('MSGCONTENTBLANK')}");
 							content.focus();
 							return;
 						}
@@ -30,7 +30,7 @@
 						var content=$('.ke-edit-iframe').contents().find('body');
 						
 						if(content.html()=='<br>'){
-							alert('内容不能为空！');
+							alert("{:L('MSGCONTENTBLANK')}");
 							content.focus();
 							return;
 						}
@@ -42,7 +42,7 @@
 						var content=$('.ke-edit-iframe').contents().find('body');
 						
 						if(content.html()=='<br>'){
-							alert('内容不能为空！');
+							alert("{:L('MSGCONTENTBLANK')}");
 							content.focus();
 							return;
 						}

@@ -26,6 +26,7 @@
               <th>{:L('PRODUCTCNNAME')}</th>
               <th>{:L('CATEGORYENNAME')}</th>
               <th>{:L('CATEGORYCNNAME')}</th>
+              <th>{:L('UPDATETIME')}</th>
               <th>{:L('ACTION')}</th>
             </tr>
         </thead>
@@ -37,6 +38,7 @@
                     <td>{$p.cn_name}</td>
                     <td></td>
                     <td></td>
+                    <td>{$c.update_time}</td>
                     <td>
                         <a href='{:U("Product/Update",array("id" => $p["id"]))}' class="btn btn-primary active" role="button">{:L('ACTIONUPDATE')}</a>
                         <button type="button" class="btn btn-danger active" onclick="toDel({$p.id})">{:L('ACTIONDEL')}</button>

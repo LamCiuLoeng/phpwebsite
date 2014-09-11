@@ -73,9 +73,41 @@ function download_file($file){
          readfile($file);
          exit;
      } else {
-         exit('文件已被删除！');
+         exit(L('MSGFILENOTEXIST'));
      }
 }
+
+
+function upload_img($name)
+{
+    $config = array(    
+                        //'maxSize'    =>    3145728,    
+                        'rootPath'   =>    './Public/',
+                        'savePath'   =>    'Upload/',    
+                        'saveName'   =>    array('uniqid',''),    
+                        'exts'       =>    array('jpg', 'gif', 'png', 'jpeg'),    
+                        'autoSub'    =>    false,    
+                        'subName'    =>    array('date','Ymd','time'),
+                     );
+    $upload = new \Think\Upload($config);// 实例化上传类
+    if(!file_exists($upload->savePath)){
+        mkdir($upload->savePath);
+    }    
+    $result = array(); 
+    $info   =   $upload->uploadOne($_FILES[$name]);  
+    
+    if(!$info) {// 上传错误提示错误信息        
+        $result[] = 1;
+        $result[] = $upload->getError();    
+    }else{// 上传成功     
+        $result[] = 0;
+        $result[] = NULL;
+        $result[] = $info['rootpath'].$info['savepath'].$info['savename'];
+        $result[] = "/Public/Upload/".$info['savename'];
+    }
+    return $result;
+}
+
 
 
 function ML($en,$cn)

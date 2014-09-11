@@ -6,6 +6,9 @@ return array(
     /* 核心语言变量 */  
     'PROJECTNAME'    => "某某工厂",
     'DASHBOARD'      => "控制台",
+    'MENULANGUAGE'   => "语言",
+	'HELLO'          => "你好，",
+	'ADMINWELCOME'   => "欢迎进入控制台。",
 
     'PROFILE'        => "账户信息",
     'HOMEPAGEST'     => "首页设置",
@@ -18,6 +21,7 @@ return array(
     'ACTIONDEL'         => "删除",
     'ACTIONMOVEUP'         => "上升",
     'ACTIONMOVEDOWN'         => "下降",
+	'UPDATETIME' => "更新时间",
     
     'ACTIONLOGIN'    => "登录",
     'ACTIONLOGOUT'   => "注销",
@@ -55,6 +59,9 @@ return array(
     'MSGRECORDNOTEXIST'  => '记录不存在！',
     'MSGNOID'  =>'没有提供ID！',
     'MSGNONAME'  =>'没有提供名称！',
+    'MSGCONTENTBLANK' => '内容不能为空！',
+    'MSGFILENOTEXIST' => '文件不存在！',
+    'MSGUPLOADFAIL' => '上传文件失败！',
     
     'MSGSIGNIN'  => '请登入',
     'MSGREMEMBERME'  => '记住我',

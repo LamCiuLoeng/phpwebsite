@@ -13,7 +13,7 @@
 		<div class="row">
     		<foreach name="ps" item="p">
               <div class="col-xs-6 col-md-3">
-                <a href="{:U('Product/index',array('id' => $p['id']))}" class="thumbnail"><img src="__PUBLIC__/{$p.img}">
+                <a href="{:U('Product/index',array('id' => $p['id']))}" class="thumbnail"><img src="{$p.img}">
                 	<?php echo ML( $p['en_name'],$p['cn_name'] )?>
                 </a>
               </div>

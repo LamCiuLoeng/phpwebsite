@@ -6,6 +6,9 @@ return array(
     /* core language pachage */ 
     'PROJECTNAME'    => "Changuan Hardware Factory",
     'DASHBOARD'      => "Dashboard",
+    'MENULANGUAGE'   => "Language",
+	'HELLO'          => "Hello,",
+	'ADMINWELCOME'   => "Welcome to the dashboard!",
 
     'PROFILE'        => "Profile",
     'HOMEPAGEST'     => "Home Page Setting",
@@ -18,6 +21,7 @@ return array(
     'ACTIONDEL'         => "Delete",
     'ACTIONMOVEUP'         => "Move Up",
     'ACTIONMOVEDOWN'         => "Move Down",
+	'UPDATETIME' => "Update Time",
     
     'ACTIONLOGIN'    => "Login",
     'ACTIONLOGOUT'   => "Logout",
@@ -33,8 +37,8 @@ return array(
     'PRODUCTNAME'      => "Product Name",
     'PRODUCTENNAME'      => "Product English Name",
     'PRODUCTCNNAME'      => "Product Chinese Name",
-    'PRODUCTDENESC'   => "Product English Description",
-    'PRODUCTDCNESC'   => "Product Chinese Description",
+    'PRODUCTENDESC'   => "Product English Description",
+    'PRODUCTCNDESC'   => "Product Chinese Description",
     'PRODUCTDIMG'   => "Product Image",
     
     'PAGEST'         => "Page Setting",
@@ -56,6 +60,9 @@ return array(
     'MSGRECORDNOTEXIST'  => 'The record does not exist!',
     'MSGNOID'  =>'Id does not provided!',
     'MSGNONAME'  =>'Name does not provided!',
+    'MSGCONTENTBLANK' => 'Content can not be blank!',
+    'MSGFILENOTEXIST' => 'The file doest not exist!',
+    'MSGUPLOADFAIL' => 'Fail to upload the file(s)',
     
     'MSGSIGNIN'  => 'Please sign in',
     'MSGREMEMBERME'  => 'Remember me',

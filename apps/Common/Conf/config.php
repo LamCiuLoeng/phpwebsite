@@ -18,4 +18,5 @@ return array(
      // 'DEFAULT_LANG' => 'en-us',
      
      'EVERY_PAGE_NUMBER' => 6,
+     'ENCRYPT_KEY' => 'dingnigefei',
 );

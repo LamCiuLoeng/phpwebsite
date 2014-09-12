@@ -41,7 +41,7 @@ class User( DeclarativeBase, SysMixin ):
 
     id = Column( Integer, autoincrement = True, primary_key = True )
     name = Column( Unicode( 100 ), nullable = False )
-    password = Column( Unicode( 100 ), nullable = False )
+    password = Column( Unicode( 1000 ), nullable = False )
     email = Column( Unicode( 500 ) )
 
 
@@ -94,6 +94,14 @@ class PageObject( DeclarativeBase, SysMixin ):
     cn_content = Column( Text )
 
 
+class DictObject( DeclarativeBase, SysMixin ):
+    __tablename__ = 'thinkphp_dict_object'
+
+    id = Column( Integer, autoincrement = True, primary_key = True )
+    name = Column( Unicode( 1000 ), nullable = False )
+    value = Column(Text)
+
+
 
 def init():
     print "drop all tables"
@@ -103,7 +111,7 @@ def init():
     print "insert default value"
 
     # default user
-    DBSession.add( User( name = "admin", password = "password", email = "lamciuloeng@gmail.com" ) )
+    DBSession.add( User( name = "admin", password = "ec54YMO2+jiX8RBizwjrxk5tZVcZ/0/5Yz1LEdcdfmWIpwXM3Q", email = "lamciuloeng@gmail.com" ) )
     # default category
     cs = [
            Category( cn_name = u"地弹簧" ), Category( cn_name = u"闭门器" ), Category( cn_name = u"门夹" ),
@@ -119,6 +127,9 @@ def init():
     DBSession.add( PageObject( name = "INTRODUCE", en_title = 'Introduce', cn_title = u'公司简介' ) )
     DBSession.add( PageObject( name = "ABOUTUS", en_title = 'About US', cn_title = u'公司风采' ) )
     DBSession.add( PageObject( name = "CONTACT", en_title = 'Contact US', cn_title = u'联系我们' ) )
+
+    DBSession.add_all([DictObject(name="HERO_1",value=""),DictObject(name="HERO_2",value=""),DictObject(name="HERO_3",value=""),])
+
 
     DBSession.commit()
     print "Done"

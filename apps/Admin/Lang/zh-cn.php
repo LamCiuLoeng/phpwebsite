@@ -14,6 +14,10 @@ return array(
     'HOMEPAGEST'     => "首页设置",
     'ACCOUNT'        => "账户",
     'PASSWORD'       => "密码",
+    'CHANGEPW'       => "修改密码",
+    'OLDPW'          => "旧密码",
+    'NEWPW'          => "新密码",
+    'CONFIRMPW'      => "确认密码",
     
     'ACTION'         => "操作",
     'ACTIONADD'         => "添加",
@@ -56,6 +60,8 @@ return array(
     'MSGDELALERT' => '你确定要删除该条记录吗？',
     'MSGDELSUCC'   => '成功删除记录！',
     
+    'MSGMISSPARAM'      => '缺少执行该操作的参数！',
+    'MSGWRONGPARAM'      => '执行该操作的参数错误！',
     'MSGRECORDNOTEXIST'  => '记录不存在！',
     'MSGNOID'  =>'没有提供ID！',
     'MSGNONAME'  =>'没有提供名称！',
@@ -66,5 +72,6 @@ return array(
     'MSGSIGNIN'  => '请登入',
     'MSGREMEMBERME'  => '记住我',
     'MSGNONAMEPASSWORD'  => '账号或者密码不能为空！',
-    'MSGNAMEPASSWORDWRONG'  => '账户不存在或者密码错误！',
+    'MSGNACCOUNTNOTEXIST'  => '账户不存在！',
+    'MSGWRONGPW' => '密码错误！',
 );

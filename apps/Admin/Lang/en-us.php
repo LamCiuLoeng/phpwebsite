@@ -14,6 +14,10 @@ return array(
     'HOMEPAGEST'     => "Home Page Setting",
     'ACCOUNT'        => "Account",
     'PASSWORD'       => "Password",
+    'CHANGEPW'       => "Change Password",
+    'OLDPW'          => "Old Password",
+    'NEWPW'          => "New Password",
+    'CONFIRMPW'      => "Confirmed Password",
     
     'ACTION'         => "Action",
     'ACTIONADD'         => "Add",
@@ -57,6 +61,8 @@ return array(
     'MSGDELALERT' => 'Are you sure to delete this record?',
     'MSGDELSUCC'   => 'Del the record successfully!',
     
+    'MSGMISSPARAM'      => 'Missing the parameter(s) to execute this action!',
+    'MSGWRONGPARAM'      => 'Parameter(s) are wrong to execute this action!',
     'MSGRECORDNOTEXIST'  => 'The record does not exist!',
     'MSGNOID'  =>'Id does not provided!',
     'MSGNONAME'  =>'Name does not provided!',
@@ -67,5 +73,6 @@ return array(
     'MSGSIGNIN'  => 'Please sign in',
     'MSGREMEMBERME'  => 'Remember me',
     'MSGNONAMEPASSWORD'  => 'Account or password could not be blank!',
-    'MSGNAMEPASSWORDWRONG'  => 'Account does not exist or wrong password!',
+    'MSGNACCOUNTNOTEXIST'  => 'Account does not exist!',
+    'MSGWRONGPW' => 'Wrong password!',
 );

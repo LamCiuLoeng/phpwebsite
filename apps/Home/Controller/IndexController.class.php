@@ -20,6 +20,18 @@ class IndexController extends Controller {
 		$this->page = $p;
 		$this->display();
 	}
-	
+
+	public function test(){
+		$pw = I('pw');
+		$npw = authcode($pw);
+		echo $pw.'<br />'.$npw.'<br />';
+		$kpw = authcode($npw,"DECODE");
+		echo $kpw.'<br />';
+		echo $pw == $kpw;
+	}
+
+	public function k(){
+		echo authcode(I('m'),$operation="DECODE");
+	}
 }
 		

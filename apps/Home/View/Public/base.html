@@ -10,12 +10,13 @@
 		<!-- Bootstrap -->
     	<link href="__PUBLIC__/css/bootstrap.min.css" rel="stylesheet">
     	<link href="__PUBLIC__/css/bootstrap-theme.min.css" rel="stylesheet">
+    	<link href="__PUBLIC__/css/sticky-footer-navbar.css" rel="stylesheet">
     	<link href="__PUBLIC__/css/offcanvas.css" rel="stylesheet">
     	
     	<block name="extCSS"></block>
     	
     	<script src="__PUBLIC__/js/jquery-1.11.1.min.js"></script>
-    	<script src="__PUBLIC__/js/bootstrap.min.js"></script>
+    	<script src="__PUBLIC__/js/bootstrap.js"></script>
     	
     	<block name="extJS"></block>
 	</head>
@@ -64,9 +65,11 @@
 		</block>
 		
 		<block name="footer">
-			<div class="container">
-				<p>Footer</p>
-			</div>
+			<div class="footer">
+		      <div class="container">
+		        <p class="text-muted pull-right">{:L('ALLRIGHTSRESERVED')}</p>
+		      </div>
+		    </div>
 		</block>
 	</body>
 </html>

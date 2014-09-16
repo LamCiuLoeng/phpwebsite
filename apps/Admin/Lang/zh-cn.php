@@ -32,10 +32,12 @@ return array(
     
     'CATEGORYST'     => "分类设置",
     'CATEGORYNAME'     => "分类名称",
-    'CATEGORYENNAME'     => "分类中文名称",
-	'CATEGORYCNNAME'     => "分类英文名称",
+    'CATEGORYENNAME'     => "分类英文名称",
+	'CATEGORYCNNAME'     => "分类中文名称",
     'CATEGORYDESC'   => "分类描述",
     
+    'HEROIMG'        => '首页图片',
+
     'PRODUCTST'      => "产品设置",
 	'PRODUCTNAME'      => "产品名称",
 	'PRODUCTENNAME'      => "产品英文名称",

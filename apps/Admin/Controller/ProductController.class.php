@@ -4,13 +4,32 @@ use Admin\Controller\BaseController;
 class ProductController extends BaseController {
     public function index(){
         $Product = M('Product');
-        
-        $ps = $Product->where("active = 0")->select();
-        $this->ps = $ps;
+        $cid = I('category_id',null);
+        $sql = "
+			SELECT p.id as id , p.en_name,p.cn_name ,p.update_time,c.en_name as cen_name, c.cn_name as ccn_name 
+			FROM thinkphp_product p, thinkphp_category c
+			WHERE p.active = 0 and c.active = 0 and c.id = p.category_id 
+        ";
+
+        if($cid){
+        	$sql .= " and c.id = ".$cid;
+        }
+        $sql .= "  ORDER BY p.update_time ";
+
+        $everypage = C('EVERY_PAGE_NUMBER');
+        $page = getMyPage(count(M()->query($sql)), $everypage);
+        $this->page = $page->show();
+
+        $sql2 = $sql.' limit '.$page->firstRow.','.$page->listRows;
+        $this->ps = M()->query($sql2);
+
+        $this->cs = M('Category')->where(array('active' => 0 ))->order("create_time")->select();
+        $this->cid = $cid;
         $this->highlight = "ADMINPRODUCT";
         $this->display();
     }
     
+   
     public function add()
     {
         $Category = M('Category');

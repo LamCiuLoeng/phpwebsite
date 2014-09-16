@@ -11,7 +11,9 @@ return array(
     'MENUABOUTUS' => "公司风采",
     'MENUCONTACT' => "联系我们",
     'MENULANGUAGE' => "语言",
-    
+    'ALLRIGHTSRESERVED' => "版权所有",
+
     'PAGENOTEXIST'     => "页面不存在！", 
     'PRODUCTNOTEXIST'     => "该产品不存在！",
+
 );

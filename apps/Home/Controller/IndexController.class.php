@@ -3,8 +3,11 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-        $this->hello = L('HELLOWORLD');
-		$this->name = ML('hello 2','你好');
+    	$this->heros = M('DictObject')->where(array('name' => array('like', 'HERO_IMAGE_%')))->order('name')->select();
+    	$en_content = M('DictObject')->where(array('name' => 'HOME_EN_CONTENT'))->find();
+    	$cn_content = M('DictObject')->where(array('name' => 'HOME_CN_CONTENT'))->find();
+    	$this->content = ML($en_content['value'],$cn_content['value']);
+
 		$this->highlight = "HOME";
     	$this->display();
 	}

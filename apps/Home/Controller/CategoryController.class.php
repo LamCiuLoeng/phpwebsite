@@ -17,7 +17,8 @@ class CategoryController extends Controller {
         $this->ps = $Product->where($condition)->order('en_name')->page($p.','.$pagenumber)->select();;
   		
 		$count = $Product->where($condition)->count();
-		$Page = new \Think\Page($count,$pagenumber);
+		// $Page = new \Think\Page($count,$pagenumber);
+        $Page = getMyPage($count,$pagenumber);
         $this->assign('page',$Page->show());
         $this->highlight = "PRODUCT";
     	$this->display();

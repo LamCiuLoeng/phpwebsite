@@ -37,6 +37,8 @@ return array(
 	'CATEGORYCNNAME'     => "Category Chinese Name",
     'CATEGORYDESC'   => "Category Description",
     
+    'HEROIMG'        => 'Hero Image',
+
     'PRODUCTST'      => "Product Setting",
     'PRODUCTNAME'      => "Product Name",
     'PRODUCTENNAME'      => "Product English Name",

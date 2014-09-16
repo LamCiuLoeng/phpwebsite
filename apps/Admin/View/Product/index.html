@@ -16,12 +16,29 @@
 
 
 <block name="content">
-<h1 class="page-header">{:L('PRODUCTST')}</h1><a href='{:U("Product/Add")}' class="btn btn-lg btn-primary active" role="button">{:L('ACTIONADD')}</a>
+<h1 class="page-header">{:L('PRODUCTST')}</h1><!-- <a href='{:U("Product/Add")}' class="btn btn-lg btn-primary active" role="button">{:L('ACTIONADD')}</a> -->
+<form class="form-inline" role="form" method="POST" action="{:U('Product/Index')}">
+    <div class="form-group">
+        <label>{:L('CATEGORYNAME')}</label>
+        <select name="category_id" class="form-control">
+              <option value=""></option>
+              <foreach name="cs" item="c" >
+                <if condition="$c['id'] eq $cid ">
+                    <option value="{$c['id']}" selected="selected"><?php echo ML( $c['en_name'],$c['cn_name'] )?></option>
+                <else/>
+                    <option value="{$c['id']}"><?php echo ML( $c['en_name'],$c['cn_name'] )?></option>
+                </if>
+              </foreach>
+          </select>
+      </div>
+      <button type="submit" class="btn btn-default">{:L('BTNSUBMIT')}</button>
+      <a href={:U("Product/Add")} class="btn btn-primary active" role="button">{:L('ACTIONADD')}</a>
+</form>
+<br />
 <div class="table-responsive">
     <table class="table table-striped">
         <thead>
             <tr>
-              <th>#</th>
               <th>{:L('PRODUCTENNAME')}</th>
               <th>{:L('PRODUCTCNNAME')}</th>
               <th>{:L('CATEGORYENNAME')}</th>
@@ -33,11 +50,10 @@
         <tbody>
             <foreach name="ps" item="p" >
                 <tr>
-                    <td>{$p.id}</td>
                     <td>{$p.en_name}</td>
                     <td>{$p.cn_name}</td>
-                    <td></td>
-                    <td></td>
+                    <td>{$p.cen_name}</td>
+                    <td>{$p.ccn_name}</td>
                     <td>{$c.update_time}</td>
                     <td>
                         <a href='{:U("Product/Update",array("id" => $p["id"]))}' class="btn btn-primary active" role="button">{:L('ACTIONUPDATE')}</a>
@@ -49,4 +65,6 @@
         </tbody>
     </table>
 </div>
+
+<div class="pull-right">{$page}</div>
 </block>

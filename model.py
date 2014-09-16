@@ -114,10 +114,25 @@ def init():
     DBSession.add( User( name = "admin", password = "ec54YMO2+jiX8RBizwjrxk5tZVcZ/0/5Yz1LEdcdfmWIpwXM3Q", email = "lamciuloeng@gmail.com" ) )
     # default category
     cs = [
-           Category( cn_name = u"地弹簧" ), Category( cn_name = u"闭门器" ), Category( cn_name = u"门夹" ),
-           Category( cn_name = u"配件" ), Category( cn_name = u"门锁" ), Category( cn_name = u"浴室夹" ),
-           Category( cn_name = u"玻璃门拉手" ), Category( cn_name = u"门执手" ), Category( cn_name = u"玻璃连接件" ),
-           Category( cn_name = u"浴室固定件" ),
+           Category( cn_name = u"地弹簧",en_name=u"floor hinge" ), 
+           Category( cn_name = u"闭门器",en_name="door closer"), 
+           Category( cn_name = u"门夹",en_name="patch fitting"),
+           Category( cn_name = u"配件",en_name="accessories"), 
+           Category( cn_name = u"门锁",en_name="door lock"), 
+           Category( cn_name = u"浴室夹",en_name="shower hinge"),
+           Category( cn_name = u"玻璃门拉手",en_name="door handle"), 
+           Category( cn_name = u"门执手",en_name="door knob"), 
+           Category( cn_name = u"玻璃连接件",en_name="glass connector"),
+           Category( cn_name = u"浴室固定件",en_name="shower stabilizer"),
+           Category( cn_name = u"浴室玻璃防水条",en_name="sealing strip"),
+           Category( cn_name = u"浴室连接件",en_name="knighthead"),
+           Category( cn_name = u"玻璃吸盘",en_name="lifting equipment"),
+           Category( cn_name = u"壁橱锁",en_name="cabinet lock"),
+           Category( cn_name = u"其他玻璃门连接件",en_name="other glass door fitting"),
+           Category( cn_name = u"玻璃爪",en_name="spider system"),
+           Category( cn_name = u"楼梯扶手",en_name="handrail"),
+           Category( cn_name = u"玻璃槽件",en_name="profile"),
+           Category( cn_name = u"其它",en_name="others"),
            ]
     DBSession.add_all( cs )
     for i, c in enumerate( cs ):
@@ -128,7 +143,9 @@ def init():
     DBSession.add( PageObject( name = "ABOUTUS", en_title = 'About US', cn_title = u'公司风采' ) )
     DBSession.add( PageObject( name = "CONTACT", en_title = 'Contact US', cn_title = u'联系我们' ) )
 
-    DBSession.add_all([DictObject(name="HERO_1",value=""),DictObject(name="HERO_2",value=""),DictObject(name="HERO_3",value=""),])
+    DBSession.add_all([DictObject(name="HERO_1",value=""),DictObject(name="HERO_2",value=""),DictObject(name="HERO_3",value=""),],
+                       DictObject(name="HOME_EN_CONTENT",value=""),DictObject(name="HOME_CN_CONTENT",value=""),
+    )
 
 
     DBSession.commit()

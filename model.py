@@ -143,9 +143,10 @@ def init():
     DBSession.add( PageObject( name = "ABOUTUS", en_title = 'About US', cn_title = u'公司风采' ) )
     DBSession.add( PageObject( name = "CONTACT", en_title = 'Contact US', cn_title = u'联系我们' ) )
 
-    DBSession.add_all([DictObject(name="HERO_1",value=""),DictObject(name="HERO_2",value=""),DictObject(name="HERO_3",value=""),],
-                       DictObject(name="HOME_EN_CONTENT",value=""),DictObject(name="HOME_CN_CONTENT",value=""),
-    )
+    DBSession.add_all([
+                      DictObject(name="HERO_1",value=""),DictObject(name="HERO_2",value=""),DictObject(name="HERO_3",value=""),
+                      DictObject(name="HOME_EN_CONTENT",value=""),DictObject(name="HOME_CN_CONTENT",value=""),
+                      ])
 
 
     DBSession.commit()

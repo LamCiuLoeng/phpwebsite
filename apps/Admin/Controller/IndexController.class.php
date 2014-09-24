@@ -40,7 +40,7 @@ class IndexController extends BaseController {
                 $m->data(array('name' => 'HERO_IMAGE_'.$index, 'value' => $file['url']))->add();
             }
         }
-        $this->success(L('MSGUPDATESUCC'),"Index/index");
+        $this->success(L('MSGUPDATESUCC'),U('index'));
     }
 
 
